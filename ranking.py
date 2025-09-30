@@ -21,14 +21,14 @@ rank25 = df_sorted["RANK25"]
 colors22 = ['#ff0000' if estado == "Alagoas" else '#3d3d3d' for estado in estados]
 colors25 = ['#0000BB' if estado == "Alagoas" else '#a3a3a3' for estado in estados]
 
-bar_height = 0.40  # Aumentado para barras mais largas
-spacing = 0.08     # Espaçamento entre as barras de 2022 e 2025
+bar_height = 0.40
+spacing = 0.08
 
-y = np.arange(len(estados)) * 1.5  # Multiplicador aumenta espaço entre estados
-y22 = y - bar_height/2 - spacing/2   # 2022 à esquerda com espaço
-y25 = y + bar_height/2 + spacing/2   # 2025 à direita com espaço
+y = np.arange(len(estados)) * 1.5 
+y22 = y - bar_height/2 - spacing/2   
+y25 = y + bar_height/2 + spacing/2  
 
-plt.figure(figsize=(12, 14))  # Altura aumentada para acomodar espaçamento
+plt.figure(figsize=(12, 14))  
 bars22 = plt.barh(y22, rank22, height=bar_height, color=colors22, label="2022")
 bars25 = plt.barh(y25, rank25, height=bar_height, color=colors25, label="2025")
 
